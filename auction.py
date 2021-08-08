@@ -19,7 +19,7 @@ def tie(array,user_ids):
     print(f'As a result we would have these {len(array)} bidders bid again')
     i=0
     time.sleep(5)
-    os.system('cls' if os.name == 'nt' else 'clear')
+#     os.system('cls' if os.name == 'nt' else 'clear')
     while i<len(array):
         print(welcome.auction)
         bid = input(f'Please enter the amount you want to bid {array[i]} with id {user_ids[i]}: $ ')
@@ -98,6 +98,7 @@ def blind_auction():
         print(f'The winner of the auction is {user_names[0]} with user id {user_ids[0]} and an amount of $ {max_bid}')
         print(welcome.winner)
         return
+    os.system('cls' if os.name == 'nt' else 'clear')
     winner_details=tie(user_names,user_ids)
     print(f'The winner of the auction is {winner_details[0]} with user id {winner_details[1]} and an amount of $ {winner_details[2]}')
     print(welcome.winner)
