@@ -8,12 +8,50 @@ import welcome
 import time
 
 
+def tie(array,user_ids):
+    winner_list=[]
+    winner_list_ids=[]
+    maximum_bid=float('-inf')
+    print('There is a tie between',end=' ')
+    for i,val in enumerate(array[:-1]):
+        print(f'{val} with user_id {user_ids[i]}, ',end='' )
+    print(f'and {array[-1]} with user id {user_ids[-1]}')
+    print(f'As a result we would have these {len(array)} bidders bid again')
+    i=0
+    while i<len(array):
+        bid = input(f'Please enter the amount you want to bid {array[i]} with id {user_ids[i]}: $ ')
+        assertion=True
+        while assertion:
+            try:
+                bid = float(bid.strip())
+                assertion=False
+            except:
+                bid=input('Invalid amount. Please enter a valid amount : $ ')
+        print(f'You made a bid of $ {bid}\n Please pass it on to the next bidder')
+        time.sleep(5)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        if bid>maximum_bid:
+            maximum_bid=bid
+            winner_list=[array[i]]
+            winner_list_ids=[user_ids[i]]
+        elif bid==maximum_bid:
+            winner_list.append(array[i])
+            winner_list_ids.append(user_ids[i])
+        i+=1
+        print(welcome.auction)
+    if len(winner_list)==1:
+        return [winner_list[0],winner_list_ids[0],maximum_bid]
+    return tie(winner_list,winner_list_ids)
+# print(tie(['Tilow','Debrah','Steve'],['Tilow0','Debrahko2','Daniel3']))
+
+
+
 
 def blind_auction():
-    count = 0
+    max_bid=float('-inf')
     user_names = []
     user_ids = []
-    bids = []
+    count=0
     another_bidder = True
     os.system('cls' if os.name == 'nt' else 'clear')
     print(welcome.auction)
@@ -29,9 +67,13 @@ def blind_auction():
                 assertion=False
             except:
                 bid=input('Invalid amount. Please enter a valid amount : $ ')
-        user_names.append(name)
-        user_ids.append(user_id)
-        bids.append(bid)
+        if bid>max_bid:
+            max_bid=bid
+            user_names=[name]
+            user_ids=[user_id]
+        elif bid==max_bid:
+            user_names.append(name)
+            user_ids.append(user_id)
         print(f'Please take note.Your user id is {user_id}')
         time.sleep(5)
         another_bidder = input('Does anyone else want to bid?(yes/no): ')
@@ -48,17 +90,13 @@ def blind_auction():
         os.system('cls' if os.name == 'nt' else 'clear')
         if another_bidder:
             print(welcome.auction)
-    max_bid=max(bids)
-    new_list=[]
-    for i,bid in enumerate(bids):
-        if bid==max_bid:
-            new_list.append(i)
-    if len(new_list)==1:
-        print(f'The winner of the auction is {user_names[new_list[0]]} with user id {user_ids[new_list[0]]} and an amount of $ {bids[new_list[0]]}')
+            
+    if len(user_names)==1:
+        print(f'The winner of the auction is {user_names[0]} with user id {user_ids[0]} and an amount of $ {max_bid}')
         print(welcome.winner)
-    else:
         return
-    
+    winner_details=tie(new_list,list_wids)
+    print(f'The winner of the auction is {winner_details[0]} with user id {winner_details[1]} and an amount of $ {winner_details[2]})
     
 
 
