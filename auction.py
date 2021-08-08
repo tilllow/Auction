@@ -18,7 +18,9 @@ def tie(array,user_ids):
     print(f'and {array[-1]} with user id {user_ids[-1]}')
     print(f'As a result we would have these {len(array)} bidders bid again')
     i=0
+    os.system('cls' if os.name == 'nt' else 'clear')
     while i<len(array):
+        print(welcome.auction)
         bid = input(f'Please enter the amount you want to bid {array[i]} with id {user_ids[i]}: $ ')
         assertion=True
         while assertion:
@@ -27,8 +29,9 @@ def tie(array,user_ids):
                 assertion=False
             except:
                 bid=input('Invalid amount. Please enter a valid amount : $ ')
-        print(f'You made a bid of $ {bid}\n Please pass it on to the next bidder')
-        time.sleep(5)
+        if i<len(array)-1:
+            print(f'You made a bid of $ {bid}\n Please pass it on to the next bidder')
+        time.sleep(2)
         os.system('cls' if os.name == 'nt' else 'clear')
         if bid>maximum_bid:
             maximum_bid=bid
@@ -38,7 +41,6 @@ def tie(array,user_ids):
             winner_list.append(array[i])
             winner_list_ids.append(user_ids[i])
         i+=1
-        print(welcome.auction)
     if len(winner_list)==1:
         return [winner_list[0],winner_list_ids[0],maximum_bid]
     return tie(winner_list,winner_list_ids)
@@ -75,7 +77,7 @@ def blind_auction():
             user_names.append(name)
             user_ids.append(user_id)
         print(f'Please take note.Your user id is {user_id}')
-        time.sleep(5)
+        time.sleep(2)
         another_bidder = input('Does anyone else want to bid?(yes/no): ')
         another_bidder = another_bidder.lower()
         while another_bidder != 'yes' and another_bidder != 'no':
@@ -95,11 +97,9 @@ def blind_auction():
         print(f'The winner of the auction is {user_names[0]} with user id {user_ids[0]} and an amount of $ {max_bid}')
         print(welcome.winner)
         return
-    winner_details=tie(new_list,list_wids)
+    winner_details=tie(user_names,user_ids)
     print(f'The winner of the auction is {winner_details[0]} with user id {winner_details[1]} and an amount of $ {winner_details[2]}')
     
-
-
 
 
 
