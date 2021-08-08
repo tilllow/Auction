@@ -14,6 +14,7 @@ def blind_auction():
     user_ids = []
     bids = []
     another_bidder = True
+    os.system('cls' if os.name == 'nt' else 'clear')
     print(welcome.auction)
     while another_bidder:
         name = input('Please enter your name: ')
