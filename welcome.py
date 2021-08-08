@@ -12,7 +12,7 @@ winner='''
                CCCCCC     OOOOOO      NNNNN       NNN      GGGGGGGGG     RRRRRR                 AAA      TTTTTTTTTTTT      SSSSSSSS
             CCCCCCCCC   OOOOOOOOOO    NNNNNN      NNN    GGGGGGGGGGGG    RRRRRRRRR             AAAAA     TTTTTTTTTTTT     SSSSSSSSS  
            CCCC        OOOO    OOOO   NNNNNN      NNN   GGGG             RRR    RRR           AAA AAA        TTTT       SSSSS
-           CCCC        OOOO     OOOO  NNN  NNN    NNN   GGGG             RRR     RRR         AAA   AAA       TTTT        SSSSS
+           CCCC       OOOO      OOOO  NNN  NNN    NNN   GGGG             RRR     RRR         AAA   AAA       TTTT        SSSSS
           CCCC        OOOO      OOOO  NNN   NNN   NNN   GGGG    GGGGGGGG RRR    RRR         AAA    AAAA      TTTT         SSSSSSSS
            CCCC       OOOO      OOOO  NNN    NNN  NNN   GGGG    GGGGGGGG RRRRRRRRR         AAAAAAAAAAAAA     TTTT             SSSSSS
             CCC        OOOO    OOOO   NNN     NNN NNN   GGGGG     GGGG   RRR    RRR       AAA         AAA    TTTT               SSSSSS
