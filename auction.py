@@ -18,6 +18,7 @@ def tie(array,user_ids):
     print(f'and {array[-1]} with user id {user_ids[-1]}')
     print(f'As a result we would have these {len(array)} bidders bid again')
     i=0
+    time.sleep(5)
     os.system('cls' if os.name == 'nt' else 'clear')
     while i<len(array):
         print(welcome.auction)
@@ -99,6 +100,7 @@ def blind_auction():
         return
     winner_details=tie(user_names,user_ids)
     print(f'The winner of the auction is {winner_details[0]} with user id {winner_details[1]} and an amount of $ {winner_details[2]}')
+    print(welcome.winner)
     
 
 
