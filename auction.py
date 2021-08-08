@@ -96,7 +96,7 @@ def blind_auction():
         print(welcome.winner)
         return
     winner_details=tie(new_list,list_wids)
-    print(f'The winner of the auction is {winner_details[0]} with user id {winner_details[1]} and an amount of $ {winner_details[2]})
+    print(f'The winner of the auction is {winner_details[0]} with user id {winner_details[1]} and an amount of $ {winner_details[2]}')
     
 
 
