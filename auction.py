@@ -5,6 +5,7 @@
 
 import os
 import welcome
+import time
 
 
 
@@ -31,7 +32,8 @@ def blind_auction():
         user_names.append(name)
         user_ids.append(user_id)
         bids.append(bid)
-        print(f'Your user id is {user_id}')
+        print(f'Please take note.Your user id is {user_id}')
+        time.sleep(5)
         another_bidder = input('Does anyone else want to bid?(yes/no): ')
         another_bidder = another_bidder.lower()
         while another_bidder != 'yes' and another_bidder != 'no':
