@@ -42,7 +42,7 @@ def blind_auction():
         else:
             another_bidder = False
         count += 1
-        os.system('cls')
+        os.system('cls' if os.name == 'nt' else 'clear')
         if another_bidder:
             print(welcome.auction)
     max_bid=max(bids)
