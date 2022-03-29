@@ -30,7 +30,7 @@ def tie(array,user_ids):
                 assertion=False
             except:
                 bid=input('Invalid amount. Please enter a valid amount : $ ')
-        if i<len(array)-1:
+        if i < len(array)-1:
             print(f'You made a bid of $ {bid}\n Please pass it on to the next bidder')
         time.sleep(2)
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -38,11 +38,11 @@ def tie(array,user_ids):
             maximum_bid=bid
             winner_list=[array[i]]
             winner_list_ids=[user_ids[i]]
-        elif bid==maximum_bid:
+        elif bid == maximum_bid:
             winner_list.append(array[i])
             winner_list_ids.append(user_ids[i])
         i+=1
-    if len(winner_list)==1:
+    if len(winner_list) == 1:
         return [winner_list[0],winner_list_ids[0],maximum_bid]
     return tie(winner_list,winner_list_ids)
 # print(tie(['Tilow','Debrah','Steve'],['Tilow0','Debrahko2','Daniel3']))
